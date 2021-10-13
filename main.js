@@ -6,7 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
   burgerButton.addEventListener("click", function () {
     menuMobile.classList.toggle("showBurgerMenu");
     burgerButton.classList.toggle("burger--active");
-    console.log(menuMobileLinks);
   });
 
   menuMobileLinks.forEach((link)=>{

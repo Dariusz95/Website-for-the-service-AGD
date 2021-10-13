@@ -146,8 +146,8 @@ html {
 }
 
 .menu__mobile {
-  -webkit-transform: translateX(-400px);
-          transform: translateX(-400px);
+  -webkit-transform: translateX(-560px);
+          transform: translateX(-560px);
   position: absolute;
   top: 90px;
   left: 0;
@@ -167,6 +167,10 @@ html {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
 }
 
 .menu__mobile-link {
@@ -315,41 +319,41 @@ html {
 
 @-webkit-keyframes bounce {
   0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
   }
   25%,
   75% {
-    -webkit-transform: translate(0px, 10px);
-            transform: translate(0px, 10px);
+    -webkit-transform: translate(0px, 5px);
+            transform: translate(0px, 5px);
   }
   50% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
   }
   100% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
   }
 }
 
 @keyframes bounce {
   0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
   }
   25%,
   75% {
-    -webkit-transform: translate(0px, 10px);
-            transform: translate(0px, 10px);
+    -webkit-transform: translate(0px, 5px);
+            transform: translate(0px, 5px);
   }
   50% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
   }
   100% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
   }
 }
 
@@ -602,11 +606,14 @@ html {
 }
 
 @media screen and (max-width: 576px) {
+  html {
+    scroll-padding-top: 0;
+  }
   nav .menu {
     background: none;
   }
   nav .menu__logo {
-    font-size: 0.8em;
+    font-size: 0.9em;
     width: 50%;
   }
   nav .menu__links {
@@ -616,10 +623,10 @@ html {
     display: block;
   }
   .header__text {
-    font-size: 1.3em;
+    font-size: 1.5em;
     position: relative;
     text-align: center;
-    top: 150px;
+    top: 180px;
     padding: 0 15px;
   }
   .header__info {
@@ -630,12 +637,12 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    font-size: 1.8em;
+    font-size: 2.8em;
     padding: 10px 0;
     margin: 20px 0;
   }
   .header__info .fas {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-right: 10px;
     color: #ff960d;
   }
@@ -643,13 +650,27 @@ html {
     font-size: 1em;
   }
   .header__info > * {
-    padding: 5px 0;
+    padding: 8px 0;
   }
   .header__btn {
     display: none;
   }
   .offer {
     padding: 0 15px;
+  }
+  .offer span {
+    font-size: 1.7em;
+  }
+  .clima__img span {
+    font-size: 1.9em;
+  }
+  .contact__area {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .contact__item {
+    width: 50%;
+    font-size: 1.4em;
   }
 }
 /*# sourceMappingURL=style.css.map */
