@@ -8,12 +8,12 @@ window.addEventListener("DOMContentLoaded", () => {
     burgerButton.classList.toggle("burger--active");
   });
 
-  menuMobileLinks.forEach((link)=>{
-    link.addEventListener('click',function(){
+  menuMobileLinks.forEach((link) => {
+    link.addEventListener("click", function () {
       burgerButton.classList.remove("burger--active");
       menuMobile.classList.remove("showBurgerMenu");
-    })
-  })
+    });
+  });
 
   //-----------
 
@@ -25,24 +25,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //-----------
 
-  const menu = document.querySelector(".menu");
+  if (window.innerWidth < 768) {
+    const menu = document.querySelector(".menu");
 
-  let oldValue = 0;
-  let newValue = 0;
-  window.addEventListener("scroll", (e) => {
-    newValue = window.pageYOffset;
-    if (oldValue < newValue) {
-      menu.classList.add("show");
-      menu.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-    } else if (oldValue > newValue && newValue == 0) {
-      menu.classList.remove("show");
-      menu.style.background = "none";
-    } else if (oldValue > newValue) {
-      menu.classList.remove("show");
-    }
-    oldValue = newValue;
-  });
-
+    let oldValue = 0;
+    let newValue = 0;
+    window.addEventListener("scroll", (e) => {
+      newValue = window.pageYOffset;
+      if (oldValue < newValue) {
+        menu.classList.add("show");
+        menu.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+      } else if (oldValue > newValue && newValue == 0) {
+        menu.classList.remove("show");
+        menu.style.background = "none";
+      } else if (oldValue > newValue) {
+        menu.classList.remove("show");
+      }
+      oldValue = newValue;
+    });
+  }
   //-----------
 
   window.addEventListener("scroll", reveal);
@@ -52,8 +53,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 0; i < reveals.length; i++) {
       let windowHeight = window.innerHeight;
+      let windowWidth = window.innerWidth;
       let revealTop = reveals[i].getBoundingClientRect().top;
-      let revealPoint = 50;
+      // if (windowWidth < 768) {
+      let revealPoint = 10;
+      // }
 
       if (revealTop < windowHeight - revealPoint) {
         reveals[i].classList.add("active");
